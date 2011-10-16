@@ -1,0 +1,20 @@
+SVN_URI="http://jbzip2.googlecode.com/svn"
+SVN_TAG="release-${PV}"
+inherit svn java
+
+HOMEPAGE="http://code.google.com/p/jbzip2/"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	mkdir -p classes
+	cygjavac -d classes $(find src/org -name '*.java')
+	cygjar cf jbzip2-${PV}.jar -C classes org/
+	cygjavadoc -d doc -sourcepath src -subpackages org
+}
+
+src_install() {
+	cd ${B}
+	dojar jbzip2-${PV}.jar
+	dojavadoc doc
+}

@@ -1,0 +1,6 @@
+category: Java
+requires:
+sdesc: "Java BZip2 library"
+ldesc: "jbzip2 is a Java bzip2 compression/decompression library. It can 
+be used as a replacement for the Apache Ant CBZip2InputStream / 
+CBZip2OutputStream classes."
